@@ -23,23 +23,27 @@
 
     _firebaseMessaging.configure(
 
+    //=========== on Message =================================================
     onMessage: (info){
         print("=========== on Message =========");
         print(info);
 
-            String argumento = "no_data";
+        String argumento = "no_data";
           if(Platform.isAndroid){
              argumento = info["data"]["comida"] ?? "no-data";
           }
-              _mensajesStreamController.sink.add(argumento);
+          _mensajesStreamController.sink.add(argumento);
       },
 
+
+      //=========== on Message =================================================
       onLaunch: (info){
         print("=========== on onLaunch =========");
         print(info);
       },
 
 
+      //=========== on Message =================================================
       onResume: (info){
         print("=========== on onResume =========");
         print(info);
@@ -52,6 +56,7 @@
 
 
   }
+
 
     dispose(){
       _mensajesStreamController?.close();

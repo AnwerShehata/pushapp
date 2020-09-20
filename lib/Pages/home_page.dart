@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'dart:async';
 
 class home_page extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
       appBar: AppBar(
-        title:Text("Home Page") ,
+        elevation: 0,
       ),
 
-      body: Center(
-        child: Text(" Hola Anwer "),
-      ),
+     body: Center(
+       child: Text(Platform.isAndroid?"Test Push In Android" :"Test Push In IOS"),
+     ),
 
 
     );
